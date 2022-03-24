@@ -1,5 +1,7 @@
 /* groovylint-disable-next-line CompileStatic */
+/* groovylint-disable-next-line NglParseError */
 pipeline {
+
     agent any
 
         stages {
@@ -12,13 +14,17 @@ pipeline {
             }
             stage('parallel') {
                 parallel {
-                    steps {
-                        echo "ON BRANCH A"
+                    stage('Branch A') {
+                        steps {
+                            echo "ON branch A"
+                        }
                     }
-                    steps {
-                        echo "ON BRANCH B"
+                    stage('Branch B') {
+                        steps {
+                            echo "On branch B"
+                        }
                     }
-                }
+                   
             }
 
         }
