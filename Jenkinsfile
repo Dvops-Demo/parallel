@@ -1,9 +1,10 @@
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
+
         stages {
-            stage('stage_1') {
-                steps{
+            stage('Non parallel') {
+                steps {
                     echo 'This is stage ONE'
 
                 }
@@ -11,10 +12,10 @@ pipeline {
             }
             stage('parallel') {
                 parallel {
-                    steps('on Branch A') {
+                    steps {
                         echo "ON BRANCH A"
                     }
-                    steps('on branch B') {
+                    steps {
                         echo "ON BRANCH B"
                     }
                 }
