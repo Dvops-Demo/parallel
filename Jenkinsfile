@@ -1,7 +1,6 @@
 /* groovylint-disable-next-line CompileStatic */
 /* groovylint-disable-next-line NglParseError */
 pipeline {
-
     agent any
 
         stages {
@@ -28,4 +27,5 @@ pipeline {
             }
 
         }
+}
 }
